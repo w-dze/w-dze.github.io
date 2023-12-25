@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Change the Media</title>
+    <meta charset="utf-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	  <!-- link the webpage's stylesheet -->
+	  <link rel="stylesheet" href="/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Bebas+Neue&family=Permanent+Marker&family=Rajdhani&family=Staatliches&display=swap" rel="stylesheet">
+
+	  <!-- link the webpage's JavaScript file -->
+	  <script src="/script.js" defer></script>
+
+  </head>
+   <div class="warning">
+  <span onclick="this.parentElement.style.display='none'"
+  class="warnButton">&times;</span>
+  <h3 class = "warnText">Warning!</h3>
+  <p class = "warnText">Sensitive content and explicit language ahead. If you are uncomfortable seeeing them, please exit this page. </p>
+</div>
+  <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="take_action.html">Take Action</a></li>
+        <li><a href="more.html">More</a></li>
+      </ul>
+    </nav>
+  <header>
+    <h1>Generate Positivity</h1>
+  </header>
+
+  <body>
+    <div class = "flex-container">
+    <main>
+      <div class = "flex-item">
+      <img class = "positive" src = "assets/positive.jpg" alt = "being body positive"/>
+      <img class = "positive" src = "assets/kind.jpg" alt = "be kind to yourself "/>
+      <img class = "positive" src = "assets/smile.jpg" alt = "smile with a peace sign "/>
+      <img class = "positive" src = "assets/staypositive.jpg" alt = "stay positive "/>
+      <img class = "positive" src = "assets/power.jpg"alt ="power"/>
+      <img class = "positive" src = "assets/happy.jpg" alt = "be happy"/>
+      <p id = "attributer">Attribute: <a href="https://www.vecteezy.com/free-vector/positive-message">Positive Message Vectors by Vecteezy</a></p>
+
+        <div class = "Messager">
+          <h2 id = "mT">Write Your Message!</h2>
+          <p id = "mDirection">Enter positive adjectives.</p>
+          <input type = "text" id = "adjective">
+          <button id = "messageButton">See message</button>
+          <p id = "positive-message"></p>
+          <p>Post it on your social media.</p>
+        </div>
+      </div>
+    </main>
+    </div>
+  </body>
+</html>
