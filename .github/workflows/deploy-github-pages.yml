@@ -1,4 +1,6 @@
 # Build a static Next.js export and publish to GitHub Pages.
+# Only runs on the user site repo so the same workflow file can live in personal_website
+# without failing there (single URL: https://w-dze.github.io/).
 # Repo settings → Pages → Build and deployment → Source: GitHub Actions.
 name: Deploy to GitHub Pages
 
@@ -18,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.repository == 'w-dze/w-dze.github.io'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,6 +46,7 @@ jobs:
           path: out
 
   deploy:
+    if: github.repository == 'w-dze/w-dze.github.io'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
