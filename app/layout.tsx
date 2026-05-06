@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces, Geist_Mono } from "next/font/google";
+import {
+  DM_Sans,
+  JetBrains_Mono,
+  Playfair_Display,
+} from "next/font/google";
 import { SkipLink } from "@/components/SkipLink";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -10,15 +14,16 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const playfairDisplay = Playfair_Display({
   variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const siteUrl =
@@ -66,7 +71,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${fraunces.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`${dmSans.variable} ${playfairDisplay.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="font-sans min-h-full">
         <script
