@@ -27,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://w-dze.github.io";
 
 const jsonLd = {
   "@context": "https://schema.org",
