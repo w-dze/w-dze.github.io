@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export default function Home() {
   const education = site.education[0];
-  const experience = site.experience.slice(0, 3);
+  const experience = site.experience;
   const projects = site.projects.slice(0, 2);
   const skillGroups = site.skills.slice(0, 4);
 
@@ -135,7 +135,9 @@ export default function Home() {
               <p className="mt-2 text-lg text-zinc-600">
                 {education?.degree} • {education?.dates}
               </p>
-              <p className="mt-3 text-sm font-semibold text-zinc-700">GPA: 3.9/4.0</p>
+              <p className="mt-3 text-sm font-semibold text-zinc-700">
+                GPA: {education?.gpa ?? "—"}/4.0
+              </p>
               <p className="mt-2 text-sm font-semibold text-zinc-700">
                 Relevant Coursework:
               </p>

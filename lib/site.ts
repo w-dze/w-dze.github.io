@@ -26,6 +26,7 @@ export type EducationItem = {
   school: string;
   degree: string;
   dates: string;
+  gpa?: string;
   detail?: string;
 };
 
@@ -76,6 +77,14 @@ export const site: SiteContent = {
     },
   ],
   experience: [
+    {
+      company: "Daikin",
+      title: "Incoming Summer Intern",
+      dates: "Summer 2026",
+      bullets: [
+        "Incoming Summer 2026 software engineering internship at Daikin.",
+      ],
+    },
     {
       company: "Tech 4 Social Good",
       title: "Software Engineer",
