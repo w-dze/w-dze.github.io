@@ -72,9 +72,11 @@ export default function Home() {
                       {job.dates}
                     </span>
                   </div>
-                  <p className="mt-4 text-lg leading-relaxed text-zinc-700">
-                    {job.bullets[0]}
-                  </p>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-lg leading-relaxed text-zinc-700 marker:text-blue-500">
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {site.skills[1].items.slice(0, 4).map((tag) => (
                       <li
@@ -109,6 +111,13 @@ export default function Home() {
                   <p className="mt-3 max-w-3xl text-lg leading-relaxed text-zinc-700">
                     {project.summary}
                   </p>
+                  {project.bullets && (
+                    <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed text-zinc-700 marker:text-blue-500">
+                      {project.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
                   <ul className="mt-8 flex flex-wrap gap-2">
                     {project.stack.slice(0, 4).map((tag) => (
                       <li
@@ -117,6 +126,37 @@ export default function Home() {
                       >
                         {tag}
                       </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="font-display text-[4rem] leading-none tracking-tight text-black">
+              Leadership
+            </h2>
+            <div className="mt-8 max-w-[780px] space-y-6">
+              {site.leadership.map((role) => (
+                <article
+                  key={`${role.company}-${role.title}`}
+                  className="rounded-2xl border border-zinc-200 bg-zinc-50/75 px-7 py-6 shadow-[0_1px_0_rgba(0,0,0,0.03)]"
+                >
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="font-display text-[2rem] leading-tight text-black">
+                        {role.title}
+                      </h3>
+                      <p className="text-lg text-zinc-600">{role.company}</p>
+                    </div>
+                    <span className="w-fit rounded-full border border-blue-200 bg-blue-50 px-4 py-1 text-sm font-mono text-zinc-700">
+                      {role.dates}
+                    </span>
+                  </div>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-lg leading-relaxed text-zinc-700 marker:text-blue-500">
+                    {role.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
                 </article>

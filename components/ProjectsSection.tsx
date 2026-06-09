@@ -28,6 +28,13 @@ export function ProjectsSection({ site }: ProjectsSectionProps) {
               {project.name}
             </h3>
             <p className="text-muted mt-2 leading-relaxed">{project.summary}</p>
+            {project.bullets && (
+              <ul className="text-muted mt-3 list-disc space-y-2 pl-5 marker:text-accent">
+                {project.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            )}
             <p className="text-muted mt-3 text-sm">
               <span className="text-foreground font-medium">Stack: </span>
               {project.stack.join(" · ")}
