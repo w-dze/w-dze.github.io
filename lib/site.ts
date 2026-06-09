@@ -8,12 +8,15 @@ export type ExperienceItem = {
   title: string;
   dates: string;
   bullets: string[];
+  badge?: string;
+  tags?: string[];
 };
 
 export type ProjectItem = {
   name: string;
   summary: string;
   bullets?: string[];
+  badge?: string;
   stack: string[];
   links: { label: string; href: string }[];
 };
@@ -88,6 +91,7 @@ export const site: SiteContent = {
         "Built structured test reports tracking endpoint coverage, execution results, and validation status, reviewed by the engineering team to inform release decisions.",
         "Reduced manual endpoint validation time by 99.9% through full automation across 6 test files, cutting execution from approximately 30 minutes to 86.4 milliseconds.",
       ],
+      tags: ["Playwright", "Postman", "TypeScript"],
     },
   ],
   leadership: [
@@ -95,6 +99,7 @@ export const site: SiteContent = {
       company: "Girls in Electrical Engineering and Computer Science (GEECS)",
       title: "Event Logistics & Organizations Committee Member",
       dates: "Jan 2026 — Present · Ann Arbor, MI",
+      badge: "GEECS",
       bullets: [
         "Coordinated logistics for 3+ community events per month within a competitive tech organization, tracking attendance and collecting member feedback to improve future programming.",
         "Administered a 60-member mentorship program pairing women in CS and EE, organizing monthly activities, managing engagement records, and documenting gatherings.",
@@ -105,6 +110,7 @@ export const site: SiteContent = {
   projects: [
     {
       name: "Fruit Nutrition App",
+      badge: "MDST",
       summary:
         "End-to-end AI-powered mobile app that identifies fruits from photos and returns real-time nutritional data.",
       bullets: [
@@ -123,6 +129,7 @@ export const site: SiteContent = {
     },
     {
       name: "LCDC Infrastructure Records Pipeline",
+      badge: "T4SG",
       summary:
         "Python ETL pipeline and React/Vite web app that standardizes county infrastructure records for GIS and staff lookup.",
       bullets: [

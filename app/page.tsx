@@ -12,7 +12,7 @@ export default function Home() {
     education?.detail
       ?.split("Coursework:")[1]
       ?.split(",")
-      .map((c) => c.trim())
+      .map((c) => c.trim().replace(/\.$/, ""))
       .filter(Boolean)
       .slice(0, 8) ?? [];
 
@@ -77,16 +77,18 @@ export default function Home() {
                       <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
-                  <ul className="mt-5 flex flex-wrap gap-2">
-                    {site.skills[1].items.slice(0, 4).map((tag) => (
-                      <li
-                        key={`${job.company}-${tag}`}
-                        className="rounded-full border border-zinc-200 bg-white px-3 py-1 font-mono text-xs text-zinc-700"
-                      >
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
+                  {job.tags && (
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {job.tags.map((tag) => (
+                        <li
+                          key={`${job.company}-${tag}`}
+                          className="rounded-full border border-zinc-200 bg-white px-3 py-1 font-mono text-xs text-zinc-700"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </article>
               ))}
             </div>
@@ -103,7 +105,7 @@ export default function Home() {
                   className="min-h-[17rem] rounded-2xl border border-zinc-200 bg-zinc-50/75 p-7 shadow-[0_1px_0_rgba(0,0,0,0.03)]"
                 >
                   <p className="font-mono text-xs text-blue-600">
-                    {project.stack[0]}
+                    {project.badge ?? project.stack[0]}
                   </p>
                   <h3 className="mt-2 font-display text-[2rem] leading-tight text-black">
                     {project.name}
@@ -143,7 +145,12 @@ export default function Home() {
                   key={`${role.company}-${role.title}`}
                   className="rounded-2xl border border-zinc-200 bg-zinc-50/75 px-7 py-6 shadow-[0_1px_0_rgba(0,0,0,0.03)]"
                 >
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  {role.badge && (
+                    <p className="font-mono text-xs text-blue-600">{role.badge}</p>
+                  )}
+                  <div
+                    className={`flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between${role.badge ? " mt-2" : ""}`}
+                  >
                     <div>
                       <h3 className="font-display text-[2rem] leading-tight text-black">
                         {role.title}
