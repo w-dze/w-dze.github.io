@@ -110,6 +110,26 @@ export const site: SiteContent = {
   ],
   projects: [
     {
+      name: "Haggle",
+      summary:
+        "Multilingual bill-negotiation assistant that explains charges in Spanish, Mandarin, or Korean, then calls providers in English with live translated subtitles.",
+      bullets: [
+        "Built a Next.js/TypeScript app that OCRs bills with Gemini, detects price jumps and fee anomalies, and explains findings in the user's language with number-checked LLM output.",
+        "Integrated ElevenLabs outbound voice agents to negotiate recurring services in English while streaming live translated subtitles and requiring mid-call user approval before any commitment.",
+        "Modeled case files, calls, transcripts, approvals, and an append-only hash-chained audit trail in Neon Postgres with Drizzle ORM for end-to-end negotiation workflows.",
+        "Enforced server-side guardrails—walk-away price limits, destination allowlists, no credential handling, and a kill switch—so users who can't follow English calls stay in control.",
+      ],
+      stack: [
+        "TypeScript",
+        "Next.js",
+        "Gemini",
+        "ElevenLabs",
+        "Neon Postgres",
+        "Drizzle",
+      ],
+      links: [{ label: "Live", href: "https://haggle-beige.vercel.app" }],
+    },
+    {
       name: "Relational Database Engine",
       summary:
         "CLI relational database engine in C++ with CREATE, INSERT, DELETE, PRINT, and JOIN across multiple linked tables.",
@@ -120,7 +140,7 @@ export const site: SiteContent = {
         "Handled invalid commands, edge cases, and multiple query paths to strengthen correctness, applying core data structures and debugging techniques.",
       ],
       stack: ["C++"],
-      links: [{ label: "GitHub", href: "https://github.com/w-dze" }],
+      links: [],
     },
     {
       name: "Syllabus Visualizer",
@@ -142,7 +162,6 @@ export const site: SiteContent = {
       ],
       links: [
         { label: "Live", href: "https://syllabus-visualizer.vercel.app/" },
-        { label: "GitHub", href: "https://github.com/w-dze" },
       ],
     },
     {
@@ -157,10 +176,7 @@ export const site: SiteContent = {
         "Worked with developers and government stakeholders through Agile sprints, code reviews, and iterative feedback to ship maintainable software for users.",
       ],
       stack: ["Python", "React", "Regular Expressions", "GIS"],
-      links: [
-        { label: "Live", href: "https://lcdc.netlify.app/" },
-        { label: "GitHub", href: "https://github.com/w-dze" },
-      ],
+      links: [{ label: "Live", href: "https://lcdc.netlify.app/" }],
     },
     {
       name: "Real-Time Notification Service",
@@ -181,7 +197,7 @@ export const site: SiteContent = {
         "Kubernetes",
         "AWS EC2",
       ],
-      links: [{ label: "GitHub", href: "https://github.com/w-dze" }],
+      links: [],
     },
     {
       name: "Fruit Nutrition App",
@@ -201,7 +217,7 @@ export const site: SiteContent = {
         "JavaScript",
         "REST APIs",
       ],
-      links: [{ label: "GitHub", href: "https://github.com/w-dze" }],
+      links: [],
     },
   ],
   skills: [
