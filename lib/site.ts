@@ -66,10 +66,10 @@ export const site: SiteContent = {
   location: "Ann Arbor, MI · B.S.E. Computer Science, Minor in Statistics (Expected May 2028)",
   resumeHref: "/resume.pdf",
   highlights: [
-    "Daikin: TypeScript API test automation across 5 REST endpoints and 100+ validation scenarios—cut regression testing time by 94%.",
-    "LCDC Infrastructure Records Pipeline: Python ETL + React app adopted by 3–4 county offices; manual processing time down 91%.",
-    "Fruit Nutrition App: TensorFlow CNN with React Native and Expo, wired to nutrition APIs for real-time dietary data.",
-    "GEECS: Coordinate professional, social, and mentorship events for a 60+ member program supporting women in computing.",
+    "Daikin: TypeScript + Playwright API automation across thermostat models and firmware releases—cut validation from 20 hours to 17 minutes.",
+    "Syllabus Visualizer: Next.js + PostgreSQL/Prisma app that turns unstructured syllabi into interactive schedules—20 minutes down to 2.",
+    "LCDC Infrastructure Pipeline: Python + React GIS pipeline adopted across three local government offices; ~80% less manual processing.",
+    "Real-Time Notification Service: Node.js, Kafka, Redis, Docker/Kubernetes on AWS EC2 with autoscaling under bursty load.",
   ],
   education: [
     {
@@ -78,20 +78,22 @@ export const site: SiteContent = {
       dates: "Aug 2024 — May 2028",
       gpa: "3.74",
       detail:
-        "Honors: UM Club of Houston Scholarship, Dean's Honor List, University Honors. Coursework: Data Structures & Algorithms, Computer Networks, Computer Security, Web Systems, Statistical Computing, Discrete Math, Computer Organization.",
+        "Honors: UM Club of Houston Scholarship, Dean's Honor List, University Honors. Coursework: Data Structures & Algorithms, Computer Networks, Computer Security, Web Systems, Computer Organization, Machine Learning, Database Management Systems.",
     },
   ],
   experience: [
     {
-      company: "Daikin",
+      company: "Daikin Comfort Technologies North America",
       title: "Software Engineer Intern",
-      dates: "May 2026 — Present · Waller, TX",
+      dates: "May 2026 — July 2026 · Waller, TX",
       bullets: [
-        "Developed a TypeScript-based API test automation framework covering 5 REST endpoints and 100+ request/response validation scenarios, reducing regression testing time by 94% (30 minutes to 1.8 minutes).",
-        "Integrated automated test results with an internal reporting dashboard by mapping test executions to API endpoints and leveraging Allure reporting, improving visibility into system behavior and failure diagnosis.",
-        "Designed scalable test infrastructure for validating complex API request and response combinations, increasing automated test coverage across critical thermostat control services.",
+        "Designed a TypeScript and Playwright automated testing framework validating RESTful API endpoints across thermostat models and 3 firmware releases.",
+        "Cut validation time from 20 hours down to just 17 minutes through the automated testing framework, freeing the QA team for exploratory investigation.",
+        "Built Python monitoring and load-testing tools to troubleshoot local API reliability under sustained thermostat traffic during peak usage periods.",
+        "Identified a 500ms minimum stable inter-request delay through the load-testing tools, accelerating defect diagnosis for the whole firmware team.",
+        "Developed a reusable TypeScript device-discovery module with polling and retry logic, syncing local and cloud device state via CI/CD-gated releases.",
       ],
-      tags: ["TypeScript", "Allure", "Postman"],
+      tags: ["TypeScript", "Playwright", "Python"],
     },
   ],
   leadership: [
@@ -107,6 +109,80 @@ export const site: SiteContent = {
     },
   ],
   projects: [
+    {
+      name: "Relational Database Engine",
+      summary:
+        "CLI relational database engine in C++ with CREATE, INSERT, DELETE, PRINT, and JOIN across multiple linked tables.",
+      bullets: [
+        "Built a CLI relational database engine in C++ supporting CREATE, INSERT, DELETE, PRINT, and JOIN operations across multiple linked tables.",
+        "Applied object-oriented design to manage tables, records, and query execution, keeping the engine's core modules cleanly separated by responsibility.",
+        "Sped up record lookup and filtering across relational datasets by implementing hash-table and binary-search-tree indexes for the query planner used.",
+        "Handled invalid commands, edge cases, and multiple query paths to strengthen correctness, applying core data structures and debugging techniques.",
+      ],
+      stack: ["C++"],
+      links: [{ label: "GitHub", href: "https://github.com/w-dze" }],
+    },
+    {
+      name: "Syllabus Visualizer",
+      summary:
+        "Full-stack Next.js app that turns unstructured syllabi into interactive course schedules for students juggling multiple classes.",
+      bullets: [
+        "Created a full-stack Next.js application transforming unstructured syllabi into interactive course schedules for students managing multiple classes.",
+        "Cut a recurring student workflow from 20 minutes down to just 2 minutes by automating the entire syllabus-to-schedule conversion process end to end.",
+        "Designed backend API and PostgreSQL/Prisma workflows to extract, validate, persist, and serve structured course data to a responsive React interface.",
+        "Deployed production app to Vercel with Dockerized local development environment, using Gemini API schema validation to prevent malformed outputs.",
+      ],
+      stack: [
+        "TypeScript",
+        "Next.js",
+        "React",
+        "PostgreSQL",
+        "Prisma",
+        "Gemini API",
+      ],
+      links: [
+        { label: "Live", href: "https://syllabus-visualizer.vercel.app/" },
+        { label: "GitHub", href: "https://github.com/w-dze" },
+      ],
+    },
+    {
+      name: "LCDC Infrastructure Pipeline",
+      badge: "T4SG",
+      summary:
+        "Python data pipeline and React interface that transforms public infrastructure records into GIS-ready data for mapping analysis.",
+      bullets: [
+        "Developed a Python data-processing pipeline transforming public infrastructure records into validated, GIS-ready data for downstream mapping analysis.",
+        "Cut manual processing time by roughly 80% through the automated pipeline, supporting adoption across three separate local government office teams.",
+        "Implemented a React interface with reusable parsing and validation workflows, automating processing of heterogeneous public infrastructure records.",
+        "Worked with developers and government stakeholders through Agile sprints, code reviews, and iterative feedback to ship maintainable software for users.",
+      ],
+      stack: ["Python", "React", "Regular Expressions", "GIS"],
+      links: [
+        { label: "Live", href: "https://lcdc.netlify.app/" },
+        { label: "GitHub", href: "https://github.com/w-dze" },
+      ],
+    },
+    {
+      name: "Real-Time Notification Service",
+      summary:
+        "Node.js notification service streaming activity events through Kafka, with Redis caching and Kubernetes autoscaling on AWS.",
+      bullets: [
+        "Built a real-time notification service in Node.js, streaming user activity events through Kafka to downstream subscriber services reliably each time.",
+        "Cached frequently accessed user preferences in Redis, cutting notification delivery latency significantly during peak traffic windows tested overall.",
+        "Containerized the service with Docker and deployed it on Kubernetes, configuring horizontal pod autoscaling for bursty notification traffic volume.",
+        "Hosted the deployment on AWS EC2 behind an Application Load Balancer, routing traffic across replicas for consistent availability under heavy load.",
+        "Load-tested the pipeline with simulated concurrent users, tuning Kafka partition counts and Redis eviction policies to hold latency perfectly steady.",
+      ],
+      stack: [
+        "Node.js",
+        "Kafka",
+        "Redis",
+        "Docker",
+        "Kubernetes",
+        "AWS EC2",
+      ],
+      links: [{ label: "GitHub", href: "https://github.com/w-dze" }],
+    },
     {
       name: "Fruit Nutrition App",
       badge: "MDST",
@@ -127,49 +203,37 @@ export const site: SiteContent = {
       ],
       links: [{ label: "GitHub", href: "https://github.com/w-dze" }],
     },
-    {
-      name: "LCDC Infrastructure Records Pipeline",
-      badge: "T4SG",
-      summary:
-        "Python data pipeline and React web app that automates county drainage record conversion and validation.",
-      bullets: [
-        "Developed a Python data-processing pipeline that automated the conversion of raw drainage records into structured mapping data, reducing manual processing time by 91%.",
-        "Built a React web application for automated data transformation and validation, improving data accuracy and enabling efficient management of county drainage records.",
-        "Collaborated directly with government stakeholders to gather requirements and deliver a production-ready solution adopted by 3–4 additional county offices.",
-      ],
-      stack: ["Python", "React", "JavaScript", "Vite", "HTML/CSS", "Regex"],
-      links: [{ label: "GitHub", href: "https://github.com/w-dze" }],
-    },
   ],
   skills: [
     {
       title: "Languages",
       items: [
+        "TypeScript/JavaScript",
         "Python",
-        "TypeScript",
+        "C++",
+        "C",
         "Java",
-        "C/C++",
-        "JavaScript",
         "SQL",
         "HTML/CSS",
-        "R",
       ],
     },
     {
       title: "Frameworks & libraries",
-      items: ["React", "React Native", "Flask", "TensorFlow", "NumPy", "Pandas"],
+      items: ["React", "Next.js", "Node.js", "Flask", "Prisma"],
     },
     {
-      title: "Tools & technologies",
+      title: "Databases & APIs",
+      items: ["PostgreSQL", "SQLite", "REST APIs"],
+    },
+    {
+      title: "Tools & infrastructure",
       items: [
-        "Git",
+        "Git/GitHub",
         "Docker",
-        "REST APIs",
-        "Allure",
-        "Vite",
+        "AWS EC2",
+        "Vercel",
+        "Playwright",
         "Linux/Unix",
-        "VS Code",
-        "Postman",
       ],
     },
   ],

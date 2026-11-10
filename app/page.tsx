@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export default function Home() {
   const education = site.education[0];
   const experience = site.experience;
-  const projects = site.projects.slice(0, 2);
+  const projects = site.projects;
   const skillGroups = site.skills.slice(0, 4);
 
   const coursework =
@@ -130,6 +130,21 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  {project.links.length > 0 && (
+                    <div className="mt-5 flex flex-wrap gap-4">
+                      {project.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-sm font-semibold text-blue-600 underline-offset-4 hover:underline"
+                        >
+                          {link.label} →
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
